@@ -1,0 +1,27 @@
+runtime: nodejs10
+env: flex
+
+handlers:
+
+- url: /img
+  static_dir: dist/img
+  secure: always
+
+- url: /vendor
+  static_dir: dist/vendor
+  secure: always
+
+- url: /manifest.json
+  static_files: build/es6-bundled/manifest.json
+  upload: build/es6-bundled/manifest.json
+  secure: always
+
+- url: /sw.js
+  static_files: dist/sw.js
+  upload: dist/sw.js
+  secure: always
+
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always
